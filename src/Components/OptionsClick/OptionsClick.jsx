@@ -1,5 +1,6 @@
-const OptionsClick = ({ClickOption, TheadTest}) => {
+const OptionsClick = ({ClickOption}) => {
   const options = [
+    { id: '-', value: '-', text: '-' },
     { id: 'None', value: 'None', text: 'Пусто' },
     { id: "kangoo-jumps", value: "kangoo-jumps", text: 'Kangoo jumps' },
     { id: "sky-jumping", value: "sky-jumping", text: 'Sky jumping' },
@@ -52,7 +53,8 @@ const OptionsClick = ({ClickOption, TheadTest}) => {
           {weekDaysTime.map(weekDay => (
             <td
               key={weekDay.id}
-              id={weekDay.id + time.id}
+              id={weekDay.id}
+              // time={time.id}
               onChange={ClickOption}
             >
               <select>

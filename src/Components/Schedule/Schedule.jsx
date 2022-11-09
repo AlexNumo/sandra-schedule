@@ -1,7 +1,8 @@
 // import { useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import OptionsClick from '../OptionsClick/OptionsClick';
-import { addDataAPI } from '../API/API';
+// import { addDataAPI } from '../API/API';
+import { sendData } from '../service/axios.config';
 
 function Schedule() {
   // const [monday0900, setMonday0900] = useState([]);
@@ -91,8 +92,11 @@ function Schedule() {
   
   const ClickOption = (e) => {
     const event = e.target.value;
-    const dayTime = e.nativeEvent.path[1].attributes[0].nodeValue;
-    const apiSend = () =>(addDataAPI({id: dayTime, day: dayTime, kind_trainee: event}));
+    const timeTrainee = e.nativeEvent.path[2].attributes.id.value;
+    console.log(timeTrainee);
+    const dayTrainee = e.nativeEvent.path[1].attributes[0].nodeValue;
+    const dayTime = dayTrainee + timeTrainee;
+    const apiSend = () => (sendData({ id: dayTime, day: dayTrainee, time: timeTrainee, kind_trainee: event }));
     if (dayTime === 'monday0900') {
       apiSend();
     }

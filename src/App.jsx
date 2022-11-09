@@ -1,6 +1,8 @@
 import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Schedule from 'Components/Schedule/Schedule';
+import ScheduleGet from 'Components/ScheduleGet/ScheduleGet';
+
 
 import Toaster from './Components/Toasts/Toasts';
 function App() {
@@ -11,6 +13,7 @@ function App() {
           <Route path='/' element={
             <>
               <Schedule />
+              <ScheduleGet/>
             </>
           } />
         </Routes>
