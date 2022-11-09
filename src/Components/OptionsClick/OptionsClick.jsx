@@ -1,22 +1,25 @@
+import {TableSize} from './OptionsClick.styled';
+
 const OptionsClick = ({ClickOption}) => {
   const options = [
     { id: '-', value: '-', text: '-' },
-    { id: 'None', value: 'None', text: 'Пусто' },
-    { id: "kangoo-jumps", value: "kangoo-jumps", text: 'Kangoo jumps' },
-    { id: "sky-jumping", value: "sky-jumping", text: 'Sky jumping' },
-    { id: "stretching", value: "stretching", text: 'Stretching' },
-    { id: "health-back", value: "health-back", text: 'Здорова спина' },
-    { id: "tabata", value: "tabata", text: 'Tabata' },
-    { id: "high-heels", value: "high-heels", text: 'High heels' },
-    { id: "tribal", value: "tribal", text: 'Tribal fusion' },
-    { id: "twerk", value: "twerk", text: 'Twerk' },
-    { id: "body-balet", value: "body-balet", text: 'Боди балет' },
-    { id: "sky-jumping-child", value: "sky-jumping-child", text: 'Sky child' },
-    { id: "kangoo-jumps-child-10", value: "kangoo-jumps-child-10", text: 'Kangoo діти (6-10)' },
-    { id: "kangoo-jumps-child-14", value: "kangoo-jumps-child-14", text: 'Kangoo діти (10-14)' },
-    { id: "yoga", value: "yoga", text: 'Йога' },
-    { id: "functional", value: "functional", text: 'Functional' },
-    { id: "metabolick-workout", value: "metabolick-workout", text: 'Metabolick workout' },
+    { id: 'None', value: '-', text: 'Вільно' },
+    { id: "kangoo-jumps", value: "Kangoo jumps", text: 'Kangoo jumps' },
+    { id: "sky-jumping", value: "Sky jumping", text: 'Sky jumping' },
+    { id: "stretching", value: "Stretching", text: 'Stretching' },
+    { id: "trx", value: "TRX", text: 'TRX' },
+    { id: "health-back", value: "Здорова спина", text: 'Здорова спина' },
+    { id: "tabata", value: "Tabata", text: 'Tabata' },
+    { id: "high-heels", value: "High heels", text: 'High heels' },
+    { id: "tribal", value: "Tribal fusion", text: 'Tribal fusion' },
+    { id: "twerk", value: "Twerk", text: 'Twerk' },
+    { id: "body-balet", value: "Боди балет", text: 'Боди балет' },
+    { id: "sky-jumping-child", value: "Sky child", text: 'Sky child' },
+    { id: "kangoo-jumps-child-10", value: "Kangoo діти (6-10)", text: 'Kangoo діти (6-10)' },
+    { id: "kangoo-jumps-child-14", value: "Kangoo діти (10-14)", text: 'Kangoo діти (10-14)' },
+    { id: "yoga", value: "Йога", text: 'Йога' },
+    { id: "functional", value: "Functional", text: 'Functional' },
+    { id: "metabolick-workout", value: "Metabolick workout", text: 'Metabolick workout' },
   ];
   const weekDaysTime = [
     { id: 'monday' },
@@ -48,16 +51,17 @@ const OptionsClick = ({ClickOption}) => {
         <tr
           key={time.id}
           id={time.id}
+          className='time'
         >
           <td id={time.id}>{time.text}</td>
           {weekDaysTime.map(weekDay => (
-            <td
+            <TableSize
               key={weekDay.id}
               id={weekDay.id}
-              // time={time.id}
+              className={weekDay.id}
               onChange={ClickOption}
             >
-              <select>
+              <select className='select'>
                 {options.map(option => (
                   <option
                     key={option.id}
@@ -67,7 +71,7 @@ const OptionsClick = ({ClickOption}) => {
                   </option>
                 ))}
               </select>
-            </td>
+            </TableSize>
           ))}
         </tr>
       ))}

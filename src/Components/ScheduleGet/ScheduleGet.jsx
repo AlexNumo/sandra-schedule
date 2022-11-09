@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import Table from 'react-bootstrap/Table';
-// import OptionsClick from '../OptionsClick/OptionsClick';
 import ScheduleTable from '../ScheduleTable/ScheduleTable';
 import {clientAPI} from '../service/axios.config';
-
 
 function ScheduleGet() {
   const [data0900, setData0900] = useState([]);
@@ -242,15 +240,15 @@ function ScheduleGet() {
       size='xl'
     >
       <thead >
-        <tr >
-          <th>#</th>
-          <th>Понеділок</th>
-          <th>Вівторок</th>
-          <th>Середа</th>
-          <th>Четвер</th>
-          <th>П'ятниця</th>
-          <th>Субота</th>
-          <th>Неділя</th>
+        <tr>
+          <th className='time'>#</th>
+          <th className='monday'>Понеділок</th>
+          <th className='tuesday'>Вівторок</th>
+          <th className='wednesday'>Середа</th>
+          <th className='thursday'>Четвер</th>
+          <th className='friday'>П'ятниця</th>
+          <th className='saturday'>Субота</th>
+          <th className='sunday'>Неділя</th>
         </tr>
       </thead>
         <tbody>
